@@ -17,6 +17,18 @@ ______________________________________
 
 void Ex1(int n){
 	//Your codes here
+	n++;
+   int arr[n][n];
+   for (int a=0; a<n; a++){
+	   for (int b=0;b<=a;b++){
+          if(a==b || b==0)
+		  arr[a][b]=1; 
+		  else 
+		  arr[a][b]=arr[a-1][b-1]+arr[a-1][b];
+          printf("%d",arr[a][b]);
+	   }
+	   printf("\n");
+   }
     
 }
 

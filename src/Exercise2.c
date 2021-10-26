@@ -53,9 +53,32 @@ void Ex2(int arr[], int m, int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(arr,a,m,n);
 	//Your codes here
-
-	printArray(a, m, n);
+	int temp,f,i,j,k;
+	for (j=0;j<n;j++){
+		for ( i=0;i<m;i++){
+			if (j%2==0){
+				for ( k=(i+1);k<m;k++){
+					if (a[i][j]<a[k][j]){
+						temp = a[i][j];
+					    a[i][j]=a[k][j];
+					     a[k][j]=temp;
+					}
+				}
+			}
+			else{
+				for ( f=(i+1);f<m;f++){
+					if (a[i][j]>a[f][j]){
+						temp = a[i][j];
+					    a[i][j]=a[f][j];
+					    a[f][j]=temp; 
+					}
+				}
+			}
+		}
+	}
+	printArray(a,m,n);
 }
+		
 
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
